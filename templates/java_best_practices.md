@@ -1,36 +1,90 @@
-# Java Application Best Practices
+# Java Best Practices
+
+## Project Structure
+project-root/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/company/project/
+│   │   │       ├── api/          # API interfaces
+│   │   │       ├── config/       # Configuration
+│   │   │       ├── controller/   # Request handlers
+│   │   │       ├── model/        # Domain model
+│   │   │       ├── repository/   # Data access
+│   │   │       ├── service/      # Business logic
+│   │   │       └── util/         # Utilities
+│   │   └── resources/
+│   │       ├── config/          # Configuration files
+│   │       ├── db/             # Database scripts
+│   │       └── static/         # Static resources
+│   └── test/
+│       ├── java/              # Test classes
+│       └── resources/         # Test resources
+├── docs/                      # Documentation
+├── .gitignore
+├── README.md
+└── pom.xml                    # or build.gradle
 
 ## Architecture
-- Follow SOLID principles
-- Use dependency injection
-- Implement layered architecture (Controller → Service → Repository)
-- Keep business logic in service layer
-- Use interfaces for loose coupling
+- Follow microservices principles if building distributed systems
+- Use layered architecture (Controller → Service → Repository)
+- Keep services small and focused
+- Design for failure
+- Make services independently deployable
+
+## Dependencies
+- Keep dependencies up to date
+- Use dependency version management
+- Minimize external dependencies
+- Use appropriate dependency scopes
+- Include only what you need
+
+## Security
+- Never store secrets in code
+- Use HTTPS everywhere
+- Implement proper authentication/authorization
+- Validate all inputs
+- Keep security dependencies updated
+- Follow the principle of least privilege
+
+## Database
+- Use connection pooling
+- Implement proper transaction management
+- Use database migrations
+- Don't trust user input in queries
+- Keep database credentials secure
 
 ## Testing
 - Write unit tests for business logic
-- Use mocking frameworks (Mockito)
-- Follow AAA pattern (Arrange-Act-Assert)
-- Aim for high test coverage
 - Include integration tests
+- Use proper test data
+- Mock external dependencies
+- Test error scenarios
+
+## Monitoring
+- Implement health checks
+- Add proper logging
+- Include metrics collection
+- Monitor performance
+- Set up alerts for critical issues
+
+## Documentation
+- Document public APIs
+- Keep documentation up to date
+- Include setup instructions
+- Document configuration options
+- Maintain changelog
 
 ## Performance
-- Use connection pooling for databases
-- Implement caching where appropriate
-- Use lazy loading when possible
+- Use caching where appropriate
+- Implement pagination for large datasets
 - Profile your application
-- Consider using CompletableFuture for async operations
+- Optimize database queries
+- Use async operations when beneficial
 
-## Security
-- Input validation
-- Use prepared statements for SQL
-- Implement proper authentication/authorization
-- Follow the principle of least privilege
-- Keep dependencies updated
-
-## Code Quality
-- Use static code analysis tools
-- Regular code reviews
-- Consistent logging strategy
-- Proper exception handling
-- Documentation for public APIs
+## Error Handling
+- Implement global error handling
+- Use appropriate exception types
+- Log errors properly
+- Return proper error responses
+- Include error tracking

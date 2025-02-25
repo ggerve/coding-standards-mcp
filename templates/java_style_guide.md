@@ -1,33 +1,56 @@
-# Java Coding Style Guidelines
+# Java Style Guide
 
-## Naming Conventions
-- Class names: PascalCase (e.g., `CustomerService`)
-- Method names: camelCase (e.g., `getUserById`)
-- Variables: camelCase (e.g., `firstName`)
-- Constants: UPPER_SNAKE_CASE (e.g., `MAX_CONNECTIONS`)
-- Packages: all lowercase (e.g., `com.company.project`)
+## Naming
+- Classes: PascalCase (`UserService`)
+- Methods/Variables: camelCase (`getUserById`)
+- Constants: UPPER_SNAKE_CASE (`MAX_RETRY_COUNT`)
+- Packages: lowercase (`com.company.project`)
 
-## Code Structure
-- One class per file
-- Class order: static fields → instance fields → constructors → methods
-- Methods should be grouped by functionality
-- Keep methods focused and concise (< 30 lines recommended)
-
-## Formatting
-- Use 4 spaces for indentation (no tabs)
-- Line length limit: 120 characters
+## Code Layout
+- Use 4 spaces for indentation
+- Line length: 120 characters max
 - One statement per line
-- Use braces with all control structures (if, for, while, etc.)
+- Use blank lines to separate logical blocks
+- Keep methods short (< 30 lines)
 
-## Best Practices
-- Always specify access modifiers (public, private, protected)
-- Favor immutability (use final where possible)
-- Document public APIs with Javadoc
-- Use meaningful variable names
-- Avoid magic numbers, use named constants
+## Classes
+- One top-level class per file
+- Order: static fields → instance fields → constructors → methods
+- Use appropriate access modifiers
+- Avoid public fields
+
+## Methods
+- Clear and descriptive names
+- Single responsibility
+- Document public APIs
+- Return early to avoid nesting
+
+## Variables
+- One variable per line
+- Initialize at declaration when possible
+- Use final for constants
+- Meaningful names
+
+## Comments
+- Use Javadoc for public APIs
+- Keep comments meaningful
+- Explain "why" not "what"
+- Use TODO for temporary code
 
 ## Exception Handling
-- Never catch Exception (too broad)
-- Don't ignore exceptions (at minimum, log them)
-- Use try-with-resources for AutoCloseable resources
-- Document thrown exceptions in Javadoc
+- Use specific exceptions
+- Don't ignore exceptions
+- Use try-with-resources
+- Log exceptions properly
+
+## Collections
+- Use interface types (List over ArrayList)
+- Use diamond operator
+- Use enhanced for loop when possible
+- Consider collection capacity
+
+## Testing
+- Test class name: [Class]Test
+- Test method: [method]_[scenario]_[expectedResult]
+- One assertion per test
+- Use meaningful test data

@@ -2,6 +2,10 @@
 
 This MCP server provides tools for accessing coding style guidelines and best practices for various technologies (Java, Python, React).
 
+<a href="https://glama.ai/mcp/servers/@ggerve/coding-standards-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@ggerve/coding-standards-mcp/badge" alt="Coding Standards Server MCP server" />
+</a>
+
 ## Prerequisites
 
 - Python 3.8 or higher

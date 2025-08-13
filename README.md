@@ -82,3 +82,7 @@ Add this to your MCP client configuration file (e.g., `~/.codeium/windsurf/mcp_c
 ```
 
 Replace `/absolute/path/to/coding-standards-mcp/server.py` with your actual server path.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

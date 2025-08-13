@@ -2,6 +2,10 @@
 name = "coding-standards-mcp"
 version = "0.1.0"
 description = "MCP server for coding standards and best practices"
+license = "MIT"
+authors = [
+    {name = "Gintautas G"},
+]
 dependencies = [
     "mcp[cli]>=0.1.0",
 ]
